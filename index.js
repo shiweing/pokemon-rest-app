@@ -28,7 +28,7 @@ else
 var port = process.env.PORT || 8080;
 
 // Send message for default URL
-app.get('/', (req, res) => res.send('RestAPI is working'));
+app.get('/', (req, res) => res.send('Welcome to the world of Pokemons!'));
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
