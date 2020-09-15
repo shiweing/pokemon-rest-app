@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
     });
 });
 // Import pokemon controller
-var pokemonController = require('./pokemonController');
+var pokemonController = require('./pokemon/pokemonController');
 // Contact routes
 router.route('/pokemons')
     .get(pokemonController.index)
