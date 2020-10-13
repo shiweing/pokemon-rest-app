@@ -8,5 +8,4 @@ script:
   - echo 'Installing Dependencies'
   - npm install
   - echo 'Running tests'
-  - mongodb
   - mocha --exit
