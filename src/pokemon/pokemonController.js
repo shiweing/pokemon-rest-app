@@ -38,7 +38,7 @@ exports.view = function (req, res) {
         if (err)
             res.send(err);
         res.json({
-            message: 'Pokemon details loading..',
+            message: 'Pokemon retrieved successfully',
             data: pokemon
         });
     });
