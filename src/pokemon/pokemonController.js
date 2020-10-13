@@ -62,7 +62,7 @@ exports.update = function (req, res) {
 };
 // Handle delete contact
 exports.delete = function (req, res) {
-    Pokemon.remove({
+    Pokemon.deleteOne({
         _id: req.params.id
     }, function (err, pokemon) {
         if (err)

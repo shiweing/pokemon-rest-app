@@ -49,3 +49,15 @@
 1. A response indicating that the pokemon has been deleted will be returned.
 ![Image of DELETE request](images/delete-request.png)
 1. Run the GET request to see the contact has been deleted
+
+## Testing (B2)
+- Test cases are written with mocha and chai-http.
+
+**Testing locally**
+- Run `npm run test` on a local copy of the application to run the tests locally.
+
+**Automated testing**
+- Travis is used as the CI tool to automate testing
+- The command `mocha --exit` is added to `.travis.yml` to initialise the testing
+- Below is the results of the travis build
+![Image of travis build](images/test-results.png)

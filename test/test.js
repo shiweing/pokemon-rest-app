@@ -117,7 +117,6 @@ describe("/api/pokemons/:id", (done) => {
             chai.request(app)
             .delete("/api/pokemons/1")
             .then((res) => {
-                console.log(res.body)
                 res.should.have.status(200);
                 res.body.should.be.a('object');
                 res.body.should.have.property('message').eql('Pokemon deleted');
