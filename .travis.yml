@@ -1,5 +1,9 @@
 language: node_js
 node_js:
   - 12.8
-install: npm install
-script: npm test
+script: 
+  - echo '******Build start******'
+  - echo 'Installing Dependencies'
+  - npm install
+  - echo 'Running tests'
+  - mocha

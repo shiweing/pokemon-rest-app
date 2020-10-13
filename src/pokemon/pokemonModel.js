@@ -1,7 +1,5 @@
 // pokemonModel.js
 var mongoose = require('mongoose');
-
-delete mongoose.connection.models['pokemon'];
 // Setup schema
 var pokemonSchema = mongoose.Schema({
     _id: {

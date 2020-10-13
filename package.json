@@ -4,16 +4,21 @@
   "description": "An app demonstrating simple Restful API implementation",
   "main": "src/index.js",
   "scripts": {
-    "test": "nodemon --exec \"mocha -R min\""
+    "start": "SET NODE_ENV=dev && nodemon src/index.js",
+    "test": "SET NODE_ENV=test && nodemon --exec \"mocha -R min\""
   },
   "author": "Shiwei Ng",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.3",
+    "mongoose": "^5.10.3"
+  },
+  "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
-    "mocha": "^5.1.1"
+    "jest": "^26.5.3",
+    "mocha": "^5.1.1",
+    "mongodb-memory-server": "^6.9.2"
   }
 }
