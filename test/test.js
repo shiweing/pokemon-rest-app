@@ -19,7 +19,7 @@ describe("/api/pokemons", () => {
             done(); //go ahead everything is done now.
         });
     });
-    
+
     // test Get api
     it("GET", (done) => {
         let poke = new Pokemon({ _id: 1, name: 'poke' });
@@ -31,8 +31,8 @@ describe("/api/pokemons", () => {
                 res.should.have.status(200);
                 res.body.data.should.be.a('array')
                 res.body.data[0].name.should.be.equal("poke");
+                done();
             })
-            done();
     })
 
     // Test POST api
