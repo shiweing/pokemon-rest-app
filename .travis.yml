@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-  - 12.8
+  - 12
 script: 
   - echo '******Build start******'
   - echo 'Installing Dependencies'
   - npm install
   - echo 'Running tests'
-  - mocha
+  - mocha --exit
