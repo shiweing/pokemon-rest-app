@@ -27,11 +27,14 @@ describe("/api/pokemons", () => {
 
         chai.request(app)
             .get('/api/pokemons')
-            .end((err, res) => {
+            .then((res) => {
                 res.should.have.status(200);
                 res.body.data.should.be.a('array')
                 res.body.data[0].name.should.be.equal("poke");
                 done();
+            })
+            .catch((err) => {
+                console.error(err)
             })
     })
 
@@ -44,13 +47,16 @@ describe("/api/pokemons", () => {
                 _id: 1,
                 name: "poke"
             })
-            .end((err, res) => {
+            .then((res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
                 res.body.should.have.property('message').eql('New pokemon added!');
                 res.body.data.should.have.property('name');
                 res.body.data.name.should.be.equal('poke')
                 done()
+            })
+            .catch((err) => {
+                console.error(err)
             })
     })
 })
