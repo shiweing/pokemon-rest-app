@@ -1,11 +1,17 @@
 language: node_js
 node_js:
-  - 12
+- 12
 services:
-  - mongodb
-script: 
-  - echo '******Build start******'
-  - echo 'Installing Dependencies'
-  - npm install
-  - echo 'Running tests'
-  - mocha --exit
+- mongodb
+script:
+- echo '******Build start******'
+- echo 'Installing Dependencies'
+- npm install
+- echo 'Running tests'
+- mocha --exit
+deploy:
+  api_key:
+    secure: MZfAG7oSQyACAaoEzm2L3AE0L3qmZL1eYoC9DiCow9MD+L6RrFkybx7JCQWhg77ROTF1E5UHiZ+1kFKWK119qkmWXKQUWAPtpxbI7wL0N5opJw0vhw0NCCyCgtQKopp99U/udCBiPgbx03BfLLOZ6cBMk/nGfdLZ0JKrmG1sGEuHZn+fX9wrQXpKYPE1H2Y3CX68Q+h4J58TdTRARB64GTwmVyXjmcCXtrIfuZ8ne/YGIujDNL++nwTXO8IGdxUMD0SDrILd7dr6ixeVVcxdY+2Iq0nRz0twE9EitwKEWBLJ4F8QiiTt1FcdzSR/rFx1ej1b4Mmu59ElKOm+AQ55TJg6Z5T7/+HpB83SLz5nYdkWQMq5wGOgs5W3khI/XVGoi76zrxNdmXGjpXbHPFA/6insIONxAQLUrTM4fZ9OUnL73ldlHtcvv1iCONNNlqIm4A5ULKp5VPMeXeoFTGIXywrvvsO1lmIx+Ovjz8R/jPq0G59eMFOfRkjO3evWWOHOxLXbzJRdc7gSIAL1wbf92fTgZkbBQjC6gSOoOKf+LJo95IuPGzif7fvlsGnyZIZCFwIi7wvuamUAa5py7ZlZLmVtNdCxAfMFkw7sY/qbCh2f3Q5PmjXxgJR1Q9mbn2zDVmhiKRx9u+bbppPxLcKAq4yTaqj0ycL65BxwwBl/yME=
+  app: pokemon-rest-app
+  on:
+    repo: shiweing/pokemon-rest-app
