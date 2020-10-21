@@ -5,7 +5,7 @@ let bodyParser = require('body-parser');
 // Import Mongoose
 let mongoose = require('mongoose');
 // Initialise dotenv
-require('dotenv').config()
+// require('dotenv').config()
 // Initialise the app
 let app = express();
 
