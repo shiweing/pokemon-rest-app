@@ -4,6 +4,8 @@ let express = require('express');
 let bodyParser = require('body-parser');
 // Import Mongoose
 let mongoose = require('mongoose');
+// Initialise dotenv
+require('dotenv').config()
 // Initialise the app
 let app = express();
 
@@ -15,7 +17,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pokemon-rest-app', { useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
