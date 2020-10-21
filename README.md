@@ -11,7 +11,7 @@
 1. Open a browser and go to http://localhost:8080
 1. The page should state `Welcome to the world of Pokemons!`
 
-## Accessing API with Postman (B1)
+## Accessing API with Postman (B1 & B3)
 1. Go to https://www.postman.com/
 1. Sign up for an account and launch the workspace
 ![Image of Postman](images/postman.png)
@@ -50,6 +50,8 @@
 ![Image of DELETE request](images/delete-request.png)
 1. Run the GET request to see the contact has been deleted
 
+> :warning: Replace `http://localhost:8080` with `https://pokemon-rest-app.herokuapp.com/` to test the deployed endpoint
+
 ## Testing (B2)
 - Test cases are written with mocha and chai-http.
 
@@ -61,3 +63,44 @@
 - The command `mocha --exit` is added to `.travis.yml` to initialise the testing
 - Below is the results of the travis build
 ![Image of travis build](images/test-results.png)
+
+## Continuus deployment (B3)
+- Heroku was chosen as the cloud service for deployment.
+
+### .travis.yml
+- The follwoing was appended to `.travs.yml`
+    ```
+    deployment:
+        provider: heroku
+        api-key:
+            secure: <encrypted-api-key>
+        app: <heroku-app-name>
+        on:
+            repo: <repo-path>
+    ```
+- To get the api key, install travis and heroku command line clients
+- Run `heroku auth:token` to get the api key.
+- Copy the api key and run `travis encrypt <api-key> --add deploy.api_key`
+- The encrypted api-key will be generated
+
+### MongoDB
+- To utilise mongodb on Heroku, MongoDB Atlas is required.
+- Create an account on MongoDB Atlas, and create a new project
+- Select `Build a cluster` on the new project
+    - Select a Cloud Provider
+    - Select a Region
+    - Enter a name for the cluster
+- After the cluster is created, click on `Database Access` in the left menu
+- Select `Add a new user`
+    - Enter a username and password
+    - Set the `User Privileges` to `Read and write to any database`
+    - Save the settings
+- Click on `Network Access` in the left menu
+- Click on `Add IP Address`
+    - `Allow Access from Anywhere` is selected for this app, but for an IP address should be specified for a secure deployment
+- Click on `Clusters`
+- Click `Connect > Connect Your Application`
+    - A connection string will be displayed, copy the string
+- Go to the Heroku dashboard for the application, under `Settings`
+    - Add a config variable `MONGODB_URI: <connection string>`
+    - Replace `<password>` in the connection string with the password set for the created DB user.
