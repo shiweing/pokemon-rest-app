@@ -15,7 +15,6 @@ exports.index = function (req, res) {
             message: "Pokemons retrieved successfully",
             data: pokemons
         });
-        console.log(res.statusCode)
     });
 };
 // Handle create contact actions
