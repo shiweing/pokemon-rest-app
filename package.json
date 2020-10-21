@@ -4,8 +4,8 @@
   "description": "An app demonstrating simple Restful API implementation",
   "main": "src/index.js",
   "scripts": {
-    "start": "SET NODE_ENV=dev && nodemon src/index.js",
-    "test": "SET NODE_ENV=test && nodemon --exec \"mocha -R min\""
+    "start": "nodemon src/index.js",
+    "test": "nodemon --exec \"mocha -R min\""
   },
   "author": "Shiwei Ng",
   "license": "ISC",
