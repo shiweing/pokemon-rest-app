@@ -4,7 +4,7 @@
 
 # Instructions
 ## Run API locally (B1)
-1. Go to https://github.com/shiweing/rest-api
+1. Go to https://github.com/shiweing/pokemon-rest-app
 1. Clone the repository locally
 1. Open the command prompt in the repository folder
 1. Enter the command `node index.js`
