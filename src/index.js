@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pokemon-rest-app', { useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pokemon-rest-app', { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -36,7 +36,7 @@ app.get('/', (req, res) => res.send('Welcome to the world of Pokemons!'));
 app.use('/api', apiRoutes);
 // Launch app to listen to specified port
 app.listen(port, function () {
-    console.log("Running RestHub on port " + port);
+    console.log("Running Pokemon Resthub on port " + port);
 });
 
 module.exports = {
