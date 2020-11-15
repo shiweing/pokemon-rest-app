@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- 12
+services:
+- mongodb
+script:
+- echo '******Build start******'
+- echo 'Installing Dependencies'
+- npm install
+- echo 'Running tests'
+- mocha --exit
+deploy:
+  provider: heroku
+  api_key:
+    secure: Nu5Z4VCs+PZEctjbbHAMEGByWJo7jl5UE94Ru54l+SjmD3SGTdnYnuIx0XNViILuAMAhIa28LhTz1Kdwyt6Lb7z5dcMF/R/W/fE5SaGCt7zfSAAWuI6/4Zaj6V4epddeHhkjgn/BiN1T+/fYC64VsHhGsgGL4WzAcHsoBx3nYXd5pRq+CGmfZ83Lqlv8Q+Shzx6P0tjQzEGX6DZTR0HyarEukBn8QBZf43QL/9AHyktszWmPqnV4Zy6UK2Wlg17SjDVJJ3cg/bC34ODpU53ZR8sBtTAKdhK36W8NM2dVngosAEY8kgqR993jJmma5zpFroNd5MfRhqEwHMdC9WB8xkmW0dhRYattH/JzJLBFhmCU/0Hj4k8VThurtSMlIxxuxNjgofd1WbJvBJhm912SJvnSs08EiZOfDLURxpuVpdJMoR8zSUlJyBV7XFjGyTH0XkQ9/c15Wx31TTDGMGCp/raJ/UI7Z4/VQBnClUEJE3ZIxGYDhqWj6/SQmvjWdd1wozFxfU07b4L1G9rwWF5HmQ6a5fAyTS+EenxJooSeqrc+UUP/4yDOegDZ/sXh+ZS+vc54GugkN8eouUOlmqqpsGtVhXal9HaeRIA3EmrqzMt0kZB9WaDs1ONiy6dRXC+UmmLLvK4Y28hE0x/aJMS7/pQD1UPQxz0jeGVI4ldf8Jo=
+  app: pokemon-rest-app
+  on:
+    repo: shiweing/pokemon-rest-app
