@@ -19,7 +19,7 @@
 1. Enter in the "Add a pokemon" text field
 1. Click "Add"
 ![Image of Add](images/add.png)
-1.The list of pokemons should refresh and display the newly added pokemon
+1. The list of pokemons should refresh and display the newly added pokemon
 ![Image of Added](images/added.png)
 
 ## Edit
