@@ -8,7 +8,9 @@
 1. Switch to branch `b4`
 1. Clone the repository locally
 1. Open the command prompt in the repository folder
-1. Enter the command `npm start`
+1. Run `npm install`
+1. `cd server` and run `npm install`
+1. Return to parent directory `cd ..` and enter the command `npm start`
 1. Open a browser and go to http://localhost:8080
 1. The webpage should display as below (but the list will be empty)
 ![Image of Web page](images/main-page.png)
